@@ -1,0 +1,26 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=
+AIzaSyBjtVbcAn6dLY2f7g_vAp7hsgee_vVMvC8&callback=initMap">
+    </script>
+<script type="text/javascript">
+var geocoder = new google.maps.Geocoder();
+var address = "new york";
+geocoder.geocode('address':address),function(results,status){
+if(status==google.maps.GeocoderStatus.OK){
+var latitude=results[0].geometry.location.latitude;
+var longitude=results[0].geometry.location.longitude;
+alert(latitude);
+}
+});
+</body>
+
+</html>

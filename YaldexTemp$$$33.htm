@@ -1,0 +1,34 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+
+<p id="demo"></p>
+<script>
+var x= [5,4];
+document.getElementById("demo").innerHTML= x;
+function myfunction(){
+x[0]="8";
+document.getElementById("demo").innerHTML=x;
+}
+function new_function(){
+alert(x.length);
+}
+function puh_function(){
+x.push("8");
+document.getElementById("not").innerHTML=x;
+}
+</script>
+<button onclick="myfunction()"> try</button><br>
+<button onclick="new_function()"> length</button><br>
+<p id="not"></p>
+<button onclick="puh_function()"> Push</button>
+
+</body>
+
+</html>
