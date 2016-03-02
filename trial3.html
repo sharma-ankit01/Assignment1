@@ -1,0 +1,30 @@
+<html>
+
+<head>
+
+<title></title><script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+ <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+
+</head>
+
+<body>
+<form>
+<label> What do you think of Javascript?
+<input type="text" id="txtfld" size="30"></label>
+</form>
+<script>
+  // CREATE A REFERENCE TO FIREBASE
+  var ankitRef = new Firebase('https://project-trial.firebaseio.com/');
+   var rescueField = $('#txtfld');
+   rescueField.keypress(function (e) {
+    if (e.keyCode == 13) {
+      //FIELD VALUES
+      var usaa = rescueField.val();
+      ankitRef.push({name:usaa});
+       }
+  });
+</script>
+
+</body>
+
+</html>

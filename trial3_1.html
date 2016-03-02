@@ -1,0 +1,42 @@
+<html>
+
+<head>
+
+<title></title><script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+ <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+
+</head>
+
+<body>
+<form>
+<label> </b>Enter Your Name</b>
+<input type="text" id="txtfld" placeholder='type your name....' size="30"></label><br>
+<label>Please enter your home address
+<input type="text" id="homeAddress" placeholder='type your home address....' size="30"></label><br>
+<label> please enter your office address?
+<input type="text" id="officeAddress" placeholder='type your office address....' size="30"></label><br>
+
+</form>
+<script>
+  // CREATE A REFERENCE TO FIREBASE
+  var ankitRef = new Firebase('https://project-trial.firebaseio.com/');
+  var nameField = $('#txtfld');
+  var homeField = $('#homeAddress');
+   var officeField = $('#officeAddress');
+   officeField.keypress(function (e) {
+    if (e.keyCode == 13) {
+      //FIELD VALUES
+      var usaa = nameField.val();
+      var usaaa = homeField.val();
+      var usaaaa = officeField.val();
+      ankitRef.push({name:usaa, home:usaaa, office:usaaaa});
+      nameField.val('');
+      homeField.val('');
+      officeField.val('');
+       }
+  });
+</script>
+
+</body>
+
+</html>
